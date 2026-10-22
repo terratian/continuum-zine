@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTINUUM MAGAZINE // ISSUE 01: THE UNSEEN ARCHIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'umber-base': '#161311',
+                        'umber-surface': '#1F1A17',
+                        'patina-green': '#2E5A50',
+                        'patina-accent': '#00FF66',
+                        'text-ivory': '#F4F1EA',
+                        'rust-orange': '#C85A32'
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'Georgia', 'serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Courier New"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+        body {
+            background-color: #161311;
+            color: #F4F1EA;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: #161311;
+            border-left: 3px solid #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2E5A50;
+            border: 1px solid #000000;
+        }
+        ::selection {
+            background: #C85A32;
+            color: #F4F1EA;
+        }
+    </style>
+</head>
+<body class="bg-umber-base text-text-ivory font-mono h-screen w-screen overflow-hidden flex m-0 p-0 border-[3px] border-black">
+
+    <!-- 35vw LEFT SYSTEM DOCK -->
+    <aside class="w-[35vw] h-screen border-r-[3px] border-black flex flex-col fixed left-0 top-0 bg-umber-surface z-50">
+        <header class="border-b-[3px] border-black p-6 bg-umber-base">
+            <h1 class="text-5xl lg:text-7xl font-serif font-black tracking-tighter uppercase leading-none text-text-ivory">
+                CONTINUUM
+            </h1>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-rust-orange mt-2">
+                [REAL PEOPLE. LIVED DIFFERENTLY. UNMISSABLE.]
+            </p>
+        </header>
+
+        <section class="border-b-[3px] border-black p-4 font-mono text-xs uppercase tracking-wider bg-umber-surface leading-relaxed text-text-ivory/90">
+            <p class="mb-2 font-bold text-text-ivory">"Life leaves a mark. So does the work."[cite: 16]</p>
+            <p class="text-text-ivory/70 text-[11px]">Helping people discover what they failed to see or hear from creators outside the accepted story[cite: 15].</p>
+        </section>
+
+        <nav class="flex-grow overflow-y-auto font-mono text-xs uppercase divide-y-[3px] divide-black flex flex-col bg-umber-base">
+            <a href="#thornton-dial" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>01 // Thornton Dial</span>
+                <span class="text-[10px] text-rust-orange">[Visual]</span>
+            </a>
+            <a href="#charles-bradley" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>02 // Charles Bradley</span>
+                <span class="text-[10px] text-rust-orange">[Sound]</span>
+            </a>
+            <a href="#vivian-maier" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>03 // Vivian Maier</span>
+                <span class="text-[10px] text-rust-orange">[Visual]</span>
+            </a>
+            <a href="#ryo-fukui" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>04 // Ryo Fukui</span>
+                <span class="text-[10px] text-rust-orange">[Sound]</span>
+            </a>
+            <a href="#carmen-herrera" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>05 // Carmen Herrera</span>
+                <span class="text-[10px] text-rust-orange">[Visual]</span>
+            </a>
+            <a href="#elizabeth-cotten" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>06 // Elizabeth Cotten</span>
+                <span class="text-[10px] text-rust-orange">[Sound]</span>
+            </a>
+        </nav>
+
+        <footer class="border-t-[3px] border-black p-4 font-mono text-[10px] uppercase flex justify-between bg-umber-surface text-text-ivory/50">
+            <span>AD-FREE // INDEPENDENT</span>
+            <span>ISSUE 01</span>
+        </footer>
+    </aside>
+
+    <!-- 65vw RIGHT CONTENT MATRIX -->
+    <main class="w-[65vw] h-screen overflow-y-auto ml-[35vw] flex flex-col bg-umber-base scroll-smooth">
+
+        <!-- MODULE 01: THORNTON DIAL -->
+        <article id="thornton-dial" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Late Recognition]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">THORNTON DIAL</h2>
+            </header>
+            <div class="w-full flex-grow border-b-[3px] border-black relative min-h-[45vh] bg-black">
+                <img src="https://images.unsplash.com/photo-1618172193763-c511deb635bf?auto=format&fit=crop&q=80&w=2000" alt="Thornton Dial" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75">
+            </div>
+            <div class="p-6 bg-umber-surface border-b-[3px] border-black font-mono text-xs leading-relaxed">
+                <p class="mb-3">A self-taught assemblage artist and former industrial metalworker from Alabama, Dial spent decades quietly constructing intricate sculptures and monumental wall assemblages out of discarded industrial flotsam, farm tools, and scavenged metal. Without academic validation or art-market ties, his work remained largely confined to local yard shows until he was noticed in his late 50s[cite: 15].</p>
+                <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
+                    <span>Medium: Found Object Assemblage[cite: 15]</span>
+                    <span>Breakthrough: Age 58[cite: 15]</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODULE 02: CHARLES BRADLEY -->
+        <article id="charles-bradley" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // The Screaming Eagle of Soul]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CHARLES BRADLEY</h2>
+            </header>
+            
+            <div class="w-full h-80 border-b-[3px] border-black relative bg-umber-base overflow-hidden flex flex-col justify-end">
+                <audio id="audio-element" crossorigin="anonymous" src="https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg" loop preload="auto"></audio>
+                <canvas id="waveform-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+                <div class="absolute inset-0 z-20 flex items-center justify-center bg-umber-base/85" id="audio-overlay">
+                    <button id="engine-boot-btn" class="border-[3px] border-black bg-patina-green text-text-ivory font-mono px-6 py-3 uppercase tracking-widest hover:bg-patina-accent hover:text-black transition-none font-black text-xs">
+                        [ BOOT AUDIO ENGINE // INIT SPECTRUM ]
+                    </button>
+                </div>
+                <div class="relative z-30 p-3 font-mono text-patina-accent text-xs uppercase font-bold tracking-widest flex justify-between w-full border-t-[3px] border-black bg-umber-surface">
+                    <span id="engine-status">STATUS: STANDBY</span>
+                    <span>No Time For Dreaming (2011)[cite: 15]</span>
+                </div>
+            </div>
+
+            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                    Bradley endured decades of homelessness, illness, and blue-collar labor while singing in small clubs under the alias "Black Velvet"[cite: 15]. Without industry representation or backing, he did not release his debut studio album until he was 62 years old[cite: 15].
+                </p>
+                <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
+                    <span>Medium: Deep Soul / R&B[cite: 15]</span>
+                    <span>Breakthrough: Age 62[cite: 15]</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODULE 03: VIVIAN MAIER -->
+        <article id="vivian-maier" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Posthumous Archive]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">VIVIAN MAIER</h2>
+            </header>
+            <div class="w-full flex-grow border-b-[3px] border-black relative min-h-[45vh] bg-black">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=2000" alt="Vivian Maier" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75">
+            </div>
+            <div class="p-6 bg-umber-surface border-b-[3px] border-black font-mono text-xs leading-relaxed">
+                <p class="mb-3">Working as a private nanny for roughly four decades, Maier took over 150,000 photographs on her Rolleiflex twin-lens camera without showing them to anyone[cite: 15]. Her massive archive was discovered accidentally in delinquent storage lockers near the end of her life[cite: 15].</p>
+                <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
+                    <span>Medium: Street Photography[cite: 15]</span>
+                    <span>Discovery: Posthumous[cite: 15]</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODULE 04: RYO FUKUI -->
+        <article id="ryo-fukui" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // Global Rediscovery]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">RYO FUKUI</h2>
+            </header>
+            <div class="p-6 bg-umber-base border-b-[3px] border-black font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+                <p class="text-sm lg:text-base leading-relaxed mb-6">
+                    A self-taught Japanese jazz pianist who did not start playing the instrument until age 22[cite: 15]. Operating outside established American or Tokyo jazz hierarchies, he developed his own rhythmic, modal technique in Sapporo[cite: 15]. Organic global rediscovery decades later elevated his private press albums into cult classics[cite: 15].
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t-[3px] border-black text-[11px]">
+                    <div>
+                        <span class="text-rust-orange block mb-1">Instrument</span>
+                        <span>Modal Jazz Piano[cite: 15]</span>
+                    </div>
+                    <div>
+                        <span class="text-rust-orange block mb-1">Seminal Works</span>
+                        <span>Scenery (1976) // Mellow Dream (1977)[cite: 15]</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODULE 05: CARMEN HERRERA -->
+        <article id="carmen-herrera" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Uncompromising Geometry]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CARMEN HERRERA</h2>
+            </header>
+            <div class="p-6 bg-umber-base border-b-[3px] border-black font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+                <p class="text-sm lg:text-base leading-relaxed mb-6">
+                    Cuban-American abstract painter Carmen Herrera sold her first major painting at 89 years old and received widespread international recognition in her 90s[cite: 15], maintaining rigid geometric abstraction on her own terms regardless of commercial trends.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t-[3px] border-black text-[11px]">
+                    <div>
+                        <span class="text-rust-orange block mb-1">Medium</span>
+                        <span>Geometric Abstraction[cite: 15]</span>
+                    </div>
+                    <div>
+                        <span class="text-rust-orange block mb-1">First Major Sale</span>
+                        <span>89 Years Old[cite: 15]</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODULE 06: ELIZABETH COTTEN -->
+        <article id="elizabeth-cotten" class="flex flex-col min-h-screen bg-umber-base">
+            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // 'Cotten Picking']</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">ELIZABETH COTTEN</h2>
+            </header>
+            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+                <p class="text-sm lg:text-base leading-relaxed mb-6">
+                    After teaching herself to play an upside-down, left-handed guitar as a child, Cotten set music aside for over 40 years while working as a housekeeper[cite: 15]. In her 60s, her employers overheard her playing, leading to her recording debut at 63 and a Grammy Award at age 90[cite: 15].
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t-[3px] border-black text-[11px]">
+                    <div>
+                        <span class="text-rust-orange block mb-1">Style</span>
+                        <span>Inverted Left-Handed Fingerpicking[cite: 15]</span>
+                    </div>
+                    <div>
+                        <span class="text-rust-orange block mb-1">Accolade</span>
+                        <span>Grammy Award at 90[cite: 15]</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- 100% OPERATIONAL WEBAUDIO & CANVAS PIPELINE SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bootBtn = document.getElementById('engine-boot-btn');
+            const audioOverlay = document.getElementById('audio-overlay');
+            const audioElement = document.getElementById('audio-element');
+            const canvas = document.getElementById('waveform-canvas');
+            const ctx = canvas.getContext('2d');
+            const engineStatus = document.getElementById('engine-status');
+
+            let audioCtx = null;
+            let analyser = null;
+            let sourceNode = null;
+            let isRunning = false;
+
+            function resizeCanvas() {
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width * window.devicePixelRatio;
+                canvas.height = rect.height * window.devicePixelRatio;
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            bootBtn.addEventListener('click', async () => {
+                if (isRunning) return;
+                try {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContextClass();
+                    if (audioCtx.state === 'suspended') await audioCtx.resume();
+
+                    sourceNode = audioCtx.createMediaElementSource(audioElement);
+                    analyser = audioCtx.createAnalyser();
+                    analyser.fftSize = 2048;
+                    analyser.smoothingTimeConstant = 0.85;
+
+                    sourceNode.connect(analyser);
+                    analyser.connect(audioCtx.destination);
+
+                    await audioElement.play();
+                    isRunning = true;
+                    audioOverlay.style.display = 'none';
+                    engineStatus.textContent = 'STATUS: ACTIVE SPECTRUM ANALYSER';
+                    renderWaveformLoop();
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            function renderWaveformLoop() {
+                if (!isRunning) return;
+                requestAnimationFrame(renderWaveformLoop);
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+
+                ctx.fillStyle = '#161311';
+                ctx.fillRect(0, 0, width, height);
+
+                const bufferLength = analyser.frequencyBinCount;
+                const dataArray = new Uint8Array(bufferLength);
+                analyser.getByteTimeDomainData(dataArray);
+
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = '#F4F1EA';
+                ctx.globalAlpha = 0.2;
+                ctx.beginPath();
+                let sliceWidth = width / bufferLength;
+                let x = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    let v = dataArray[i] / 128.0;
+                    let y = (v * height) / 2;
+                    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    x += sliceWidth;
+                }
+                ctx.stroke();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#00FF66';
+                ctx.globalAlpha = 1.0;
+                ctx.beginPath();
+                x = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    let v = dataArray[i] / 128.0;
+                    let y = ((v * height) / 2) + Math.sin(i * 0.01 + Date.now() * 0.002) * 4;
+                    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    x += sliceWidth;
+                }
+                ctx.stroke();
+            }
+        });
+    </script>
+</body>
+</html>
