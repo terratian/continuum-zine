@@ -10,7 +10,7 @@ Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print
 - `print.css`: page 1 = cover/contents (sidebar), then one article per page, then colophon. 8 pages = multiple of 4 (saddle-stitch). Audio/canvas controls are hidden in print.
 - `build-pdf.mjs`: Playwright/Chromium -> `dist/continuum-issue-01.pdf`.
   - Local: `npm install && npx playwright install chromium && npm run pdf`
-  - Size: `TRIM_W=5.5 TRIM_H=8.5 BLEED=0.125 npm run pdf` (inches; page = trim + 2x bleed). Default 8.5x11.
+  - Size: `TRIM_W=5.5 TRIM_H=8.5 BLEED=0.125 npm run pdf` (inches; page = trim + 2x bleed). Default 10.75x14.375 (Domebook 2 / Whole Earth catalog trim). Type scales with page width via `--s`. Nearest stock option seen: Newspaper Club tabloid, 289x380 mm (~11.38x14.96 in); confirm the printer accepts a custom trim, bleed and page counts before ordering.
   - `STRICT=1` fails the build if any image is missing or still a placeholder.
 - `.github/workflows/print-pdf.yml`: builds the PDF on push; download it from the Actions run (Artifacts). Pages deploy is unchanged and the PDF is never published.
 - Adding an article adds a page; keep the total a multiple of 4 (use the colophon/extra pages to pad).

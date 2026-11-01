@@ -1,6 +1,6 @@
 // Renders index.html (print.css applied) to a print-ready PDF.
 // Run: npm install && npx playwright install chromium && npm run pdf
-// Env: TRIM_W=8.5 TRIM_H=11 BLEED=0.125 (inches) OUT=dist/continuum-issue-01.pdf
+// Env: TRIM_W=10.75 TRIM_H=14.375 BLEED=0.125 (inches; these are the defaults) OUT=dist/continuum-issue-01.pdf
 //      STRICT=1 (fail if any image is missing/placeholder)  CHROMIUM_PATH=/path/to/chrome (optional)
 //      TAILWIND_CSS=file.css (offline: use a prebuilt Tailwind CSS file instead of the CDN)
 import { chromium } from 'playwright';
@@ -9,7 +9,7 @@ import { readFile, mkdir } from 'node:fs/promises';
 import { extname, join, resolve, dirname, sep } from 'node:path';
 
 const num = (k, d) => Number(process.env[k] ?? d);
-const W = num('TRIM_W', 8.5), H = num('TRIM_H', 11), B = num('BLEED', 0.125);
+const W = num('TRIM_W', 10.75), H = num('TRIM_H', 14.375), B = num('BLEED', 0.125); // default = Domebook 2 / Whole Earth trim
 const OUT = process.env.OUT ?? 'dist/continuum-issue-01.pdf';
 const root = resolve('.');
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ogg': 'audio/ogg', '.woff2': 'font/woff2' };
@@ -42,7 +42,7 @@ try {
   if (offlineCss) await page.addStyleTag({ path: offlineCss });
   await page.evaluate(() => document.fonts.ready);
   const pw = (W + 2 * B).toFixed(4), ph = (H + 2 * B).toFixed(4);
-  await page.addStyleTag({ content: `@page{size:${pw}in ${ph}in;margin:0}:root{--page-w:${pw}in;--page-h:${ph}in;--bleed:${B}in}` });
+  await page.addStyleTag({ content: `@page{size:${pw}in ${ph}in;margin:0}:root{--page-w:${pw}in;--page-h:${ph}in;--bleed:${B}in;--s:${((W + 2 * B) / 8.75).toFixed(4)}}` });
 
   const imgs = await page.$$eval('img', els => els.map(i => ({ alt: i.alt, src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0 })));
   const bad = imgs.filter(i => !i.ok || /unsplash\.com/.test(i.src));

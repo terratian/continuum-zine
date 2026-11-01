@@ -19,8 +19,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node build-pdf.mjs
         env:
-          TRIM_W: '8.5'
-          TRIM_H: '11'
+          TRIM_W: '10.75'
+          TRIM_H: '14.375'
           BLEED: '0.125'
       - uses: actions/upload-artifact@v4
         with:
