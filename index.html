@@ -62,7 +62,18 @@
             background: #C85A32;
             color: #F4F1EA;
         }
-        @media screen and (max-width:767px) { main>article#editors-note>header{padding-right:5rem} }
+        /* Phone-shaped column: every story is a centered 9:16-wide strip, even on wide screens */
+        @media screen {
+            main { align-items: center; background: #0d0b0a; }
+            main > article { width: min(100%, max(56.25svh, 22rem)); text-align: center; border-left: 3px solid #000; border-right: 3px solid #000; }
+            main > article > header, main > article .split-text, main > article .columns-body { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+            main > article .columns-body { column-count: 1 !important; columns: auto !important; }
+            main > article .mag-measure { max-width: none !important; }
+            main > article .flex.justify-between { justify-content: center; flex-wrap: wrap; gap: .25rem 1.25rem; }
+            main > article h2 { overflow-wrap: anywhere; }
+            main>article#editors-note>header{padding-right:1.5rem !important}
+            #contents-drawer.-translate-x-full { visibility: hidden; }
+        }
         @font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/anton-latin-400.woff2") format("woff2")}
         .art-frame{container-type:inline-size}
         .art-name{font-family:Anton,Impact,"Arial Narrow","Liberation Sans Narrow",sans-serif;font-weight:400;line-height:.95;letter-spacing:.02em;text-transform:uppercase;color:#F4F1EA;text-shadow:0 2px 0 rgba(0,0,0,.55),0 0 28px rgba(0,0,0,.45)}
