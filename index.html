@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTINUUM MAGAZINE // ISSUE 01: THE UNSEEN ARCHIVE</title>
+    <title>Continuum 1: Consider the Penguin Hoosh? | A free, ad-free magazine</title>
+    <meta name="description" content="Continuum is a free, ad-free magazine and print-on-demand zine about creators the market ignored while they were alive: Thornton Dial, Charles Bradley, Vivian Maier, Ryo Fukui, Carmen Herrera, Elizabeth Cotten and Anthony Bourdain before the fame. Issue 01: Consider the Penguin Hoosh?">
+    <link rel="canonical" href="https://terratian.github.io/continuum-zine/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#161311">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Continuum">
+    <meta property="og:title" content="Continuum 1: Consider the Penguin Hoosh?">
+    <meta property="og:description" content="A free, ad-free magazine about creators the market ignored while they were alive. Why do we wait for artists to die before we fund them?">
+    <meta property="og:url" content="https://terratian.github.io/continuum-zine/">
+    <meta property="og:image" content="https://terratian.github.io/continuum-zine/volumes/issue-01/media/cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"PublicationIssue","name":"Continuum 1: Consider the Penguin Hoosh?","issueNumber":"1","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","url":"https://terratian.github.io/continuum-zine/","image":"https://terratian.github.io/continuum-zine/volumes/issue-01/media/cover.jpg","inLanguage":"en","isPartOf":{"@type":"Periodical","name":"Continuum","url":"https://terratian.github.io/continuum-zine/"},"editor":{"@type":"Person","name":"de' negro riot dog maniplacas 33"},"illustrator":{"@type":"Person","name":"de' negro riot dog maniplacas 33"},"about":["Thornton Dial","Charles Bradley","Vivian Maier","Ryo Fukui","Carmen Herrera","Elizabeth Cotten","Anthony Bourdain"]}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -48,7 +62,11 @@
             background: #C85A32;
             color: #F4F1EA;
         }
-        @media screen { main{scroll-snap-type:y proximity} main>article{scroll-snap-align:start} }
+        @media screen and (max-width:767px) { main>article#editors-note>header{padding-right:5rem} }
+        @font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/anton-latin-400.woff2") format("woff2")}
+        .art-frame{container-type:inline-size}
+        .art-name{font-family:Anton,Impact,"Arial Narrow","Liberation Sans Narrow",sans-serif;font-weight:400;line-height:.95;letter-spacing:.02em;text-transform:uppercase;color:#F4F1EA;text-shadow:0 2px 0 rgba(0,0,0,.55),0 0 28px rgba(0,0,0,.45)}
+        .art-name.dark{color:#161311;text-shadow:0 0 22px rgba(244,241,234,.8)}
         .art-panel .pending-label{display:none}
         .art-panel.pending .pending-label{display:flex}
     </style>
@@ -112,49 +130,50 @@
         </footer>
     </aside>
 
-    <main class="w-screen h-screen overflow-y-auto flex flex-col bg-umber-base scroll-smooth">
+    <main class="w-screen h-screen overflow-y-auto flex flex-col bg-umber-base scroll-smooth pb-28">
         <article id="cover" class="border-b-[3px] border-black flex items-center justify-center h-screen min-h-screen bg-black">
+            <h1 class="sr-only">Continuum 1: Consider the Penguin Hoosh? A free, ad-free magazine about creators the market ignored while they were alive</h1>
             <img src="volumes/issue-01/media/cover.jpg" alt="Continuum 1 cover: a painted figure with a bandaged head holds an ear and a cardboard sign reading WILL PAINT FOR FOOD" class="h-full w-full object-contain">
         </article>
 
         <article id="editors-note" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+            <header class="border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Editor&rsquo;s Note // Continuum Volume 01]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">RAISON D&rsquo;&Ecirc;TRE: THE ECOSYSTEM OF THE COOKED</h2>
             </header>
-            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow max-w-3xl">
-                <div class="border-[3px] border-black bg-umber-surface p-4 mb-2 text-[11px] uppercase tracking-wider leading-relaxed text-text-ivory/80">
+            <div class="columns-body px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed flex-grow w-full lg:columns-2 xl:columns-3 gap-12 [column-rule:1px_solid_rgba(244,241,234,0.15)]">
+                <div class="[column-span:all] border-[3px] border-black bg-umber-surface p-4 mb-8 text-[11px] uppercase tracking-wider leading-relaxed text-text-ivory/80">
                     <span class="text-[10px] text-rust-orange tracking-widest block mb-2">I. Project Setup Principles</span>
                     <p class="mb-1"><span class="text-patina-accent">Architecture:</span> Modular text delivery engineered for cross-platform, zero-latency deployment.</p>
                     <p class="mb-1"><span class="text-patina-accent">Layout:</span> Strictly ad-free, uncompromised brutalist formatting.</p>
                     <p class="mb-1"><span class="text-patina-accent">Dependency:</span> Zero corporate intermediaries. Sourced directly from raw human observation.</p>
-                    <p><span class="text-patina-accent">Attribution:</span> All rights remain locked to the primary author. Derivative works without direct verification are strictly forbidden.</p>
+                    <p><span class="text-patina-accent">Attribution:</span> Completely open. Copy, remix, print and republish any original text or design here, anywhere, with attribution (CC BY 4.0). Third-party works (art, recordings) stay with their rights holders and are credited as such.</p>
                 </div>
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-8">II. The Hoosh Metaphor</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     During the Heroic Age of Antarctic exploration, men trapped in the pack ice did not eat fresh penguin meat because they craved a culinary delicacy. They stripped away the rancid blubber, hacked out the tough muscle, and threw it into a boiling pot of melted snow and stale tallow to stave off scurvy and systemic rot. It was an oil-slicked, fishy, unpalatable slurry of pure survival. They ate the bird because the alternative was death in the dark.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     The contemporary funding of living creators functions on the exact same structural logic.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     High-society patronage is not a life support system; it is a rationing mechanism. The gatekeepers of capital provide the living creator with precisely enough sustenance to keep them shivering over the canvas, the keyboard, or the engine. To fund an artist comfortably would be to remove their &ldquo;edge&rdquo;&mdash;the very trauma that the patron intends to buy, trade, and display as a status symbol at a black-tie gala.
                 </p>
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-8">III. The Uncomfortable Reality</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     The core hypocrisy of the cultural economy lies in its appetite for the static dead. A living artist is a volatile liability. They make unpredictable demands, change their aesthetic lenses, and carry a biological cost of living.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     But once the artist is dead, the inventory is permanently capped. The corpse can no longer talk back or ruin the valuation of the assets already locked inside the vault. High society&rsquo;s predilection for deceased creators is driven by a desire for safe financial speculation masked as romantic reverence.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     The money poured into dead estates is never about the art. It is about a voyeuristic fascination with the shit the creator was forced to live in while they were alive. The wealthy look at the raw impasto of a Van Gogh or the desperate prose of a starving writer and feel a perverse thrill from the proximity to genuine human suffering&mdash;a suffering that they intentionally prolonged by holding back resources until the pulse stopped.
                 </p>
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-8">IV. An Invitation to Participate</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     This publication is an active counter-lobby against the speculative hoarding of dead things. We reject the romantic myth of the necessary martyrdom of creators. Continuum 1 is a diagnostic tool designed to peel back the pristine white walls of the gallery and expose the boiling pot beneath.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                <p class="font-serif text-lg leading-relaxed mb-5 text-text-ivory/90">
                     We invite creators, builders, and operators who refuse to be processed, packaged, and commodified to join this mesh layout. We write from the interior ice shelves, using the tools available, to document the reality before the freeze sets in.
                 </p>
             </div>
@@ -164,34 +183,40 @@
             </div>
         </article>
 
-        <article id="anthony-bourdain" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="anthony-bourdain" class="border-b-[3px] border-black mag flex flex-col mag-foot bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/bourdain.jpg" alt="Painted portrait of Anthony Bourdain in a leather jacket and spiked collar at a punk club, holding a raw steak and a cardboard sign reading WILL COOK FOR FOOD" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // ANTHONY BOURDAIN]</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Creator Focus // Pre-Celebrity Archive]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">ANTHONY BOURDAIN</h2>
+                <p class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/70 mt-3">Written by Claude (AI, Anthropic) // Directed &amp; edited by de&rsquo; negro riot dog maniplacas 33</p>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black flex items-center justify-center">
-                <img src="volumes/issue-01/media/bourdain.jpg" alt="Painted portrait of Anthony Bourdain in a leather jacket and spiked collar at a punk club, holding a raw steak and a cardboard sign reading WILL COOK FOR FOOD" class="w-full h-full object-contain">
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-2">1985 // 1990 // 1995</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-5">
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     1985: he pays for a seat in Gordon Lish&rsquo;s writing workshop. 1990: a small advance from Random House, after meeting an editor. 1995: <em>BONE IN THE THROAT</em>, a culinary mystery, finally hits the shelves under Villard Books. Five years from handshake to hardcover, and the kitchens never closed.
                 </p>
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-2">The Tour</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-5">
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     Nobody flew him anywhere. He paid for his own book tour. It did not work.
                 </p>
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-2">After</h3>
-                <p class="text-sm lg:text-base leading-relaxed mb-5">
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     <em>Kitchen Confidential</em> came out in 2000, Bloomsbury, a New York Times bestseller. Same man, same hands, same ability to put a sentence through a wall. The only thing that changed was the market&rsquo;s willingness to look.
                 </p>
-                <p class="text-sm lg:text-base leading-relaxed mb-5">
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     This is what pre-celebrity looks like: a book, a small check, and a tour you finance yourself.
                 </p>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
-            </div>
-            <div class="p-6 border-t-[3px] border-black bg-umber-surface font-mono text-[10px] uppercase tracking-wider text-text-ivory/80">
+            <div class="foot p-6 border-t-[3px] border-black bg-umber-surface font-mono text-[10px] uppercase tracking-wider text-text-ivory/80">
                 <p class="text-rust-orange mb-2">For each of the 25,000 first-edition copies that got made.</p>
                 <div class="flex justify-between text-text-ivory/50">
                     <span>Book: Bone in the Throat // Villard, 1995</span>
@@ -200,35 +225,35 @@
             </div>
         </article>
 
-        <article id="thornton-dial" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="thornton-dial" class="border-b-[3px] border-black mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/dial-assemblage.jpg" alt="Thornton Dial" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // THORNTON DIAL]</div>
+                    <div class="art-name absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:34.0cqw">DIAL</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Late Recognition]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">THORNTON DIAL</h2>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
-                <img src="volumes/issue-01/media/dial-assemblage.jpg" alt="Thornton Dial" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
-                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // THORNTON DIAL]</div>
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-4">A self-taught assemblage artist and former industrial metalworker from Alabama, Dial spent decades quietly constructing intricate sculptures and monumental wall assemblages out of discarded industrial flotsam, farm tools, and scavenged metal. Without academic validation or art-market ties, his work remained largely confined to local yard shows until he was noticed in his late 50s.</p>
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">A self-taught assemblage artist and former industrial metalworker from Alabama, Dial spent decades quietly constructing intricate sculptures and monumental wall assemblages out of discarded industrial flotsam, farm tools, and scavenged metal. Without academic validation or art-market ties, his work remained largely confined to local yard shows until he was noticed in his late 50s.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Found Object Assemblage</span>
                     <span>Breakthrough: Age 58</span>
                 </div>
-            </div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
         </article>
 
-        <article id="charles-bradley" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
-                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // The Screaming Eagle of Soul]</span>
-                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CHARLES BRADLEY</h2>
-            </header>
-            
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex flex-col">
-            <div class="w-full h-80 lg:h-auto lg:flex-grow border-b-[3px] lg:border-b-0 border-black relative bg-umber-base overflow-hidden flex flex-col justify-end">
+        <article id="charles-bradley" class="border-b-[3px] border-black mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+            <div class="audio-block absolute inset-0 w-full h-full bg-umber-base overflow-hidden flex flex-col justify-end">
                 <audio id="audio-element" crossorigin="anonymous" src="volumes/issue-01/media/bradley-session.ogg" loop preload="auto"></audio>
                 <canvas id="waveform-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
                 <div class="absolute inset-0 z-20 flex items-center justify-center bg-umber-base/85" id="audio-overlay">
@@ -241,9 +266,17 @@
                     <span>No Time For Dreaming (2011)</span>
                 </div>
             </div>
+                    <div class="art-name absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:25.1cqw">BRADLEY</div>
+                </div>
             </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // The Screaming Eagle of Soul]</span>
+                <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CHARLES BRADLEY</h2>
+            </header>
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     Bradley endured decades of homelessness, illness, and blue-collar labor while singing in small clubs under the alias "Black Velvet". Without industry representation or backing, he did not release his debut studio album until he was 62 years old.
                 </p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
@@ -263,44 +296,55 @@
                     <span class="text-rust-orange text-[10px]">[Scan to stream // Free Music Archive]</span>
                     <p>No Time For Dreaming</p>
                     <span class="text-text-ivory/60 text-[10px]">Charles Bradley // KEXP at SXSW 2011 // freemusicarchive.org</span>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
                 </div>
             </div>
-            </div>
+                </div>
             </div>
         </article>
 
-        <article id="vivian-maier" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="vivian-maier" class="border-b-[3px] border-black mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/maier-roll.jpg" alt="Illustration by de' negro riot dog maniplacas 33: black-and-white street portrait of a woman in a wide-brimmed hat holding a twin-lens reflex camera and a cardboard sign that reads WILL TAKE A PICTURE FOR FOOD" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // VIVIAN MAIER]</div>
+                    <div class="art-name dark absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:34.0cqw">MAIER</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Posthumous Archive]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">VIVIAN MAIER</h2>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
-                <img src="volumes/issue-01/media/maier-roll.jpg" alt="Vivian Maier" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
-                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // VIVIAN MAIER]</div>
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-4">Working as a private nanny for roughly four decades, Maier took over 150,000 photographs on her Rolleiflex twin-lens camera without showing them to anyone. Her massive archive was discovered accidentally in delinquent storage lockers near the end of her life.</p>
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">Working as a private nanny for roughly four decades, Maier took over 150,000 photographs on her Rolleiflex twin-lens camera without showing them to anyone. Her massive archive was discovered accidentally in delinquent storage lockers near the end of her life.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Street Photography</span>
                     <span>Discovery: Posthumous</span>
                 </div>
-            </div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Reference: <a class="underline hover:text-patina-accent" href="https://commons.wikimedia.org/wiki/File:Unseen_Vivian_Maier_at_Fotografiska_New_York.jpg" target="_blank" rel="noopener">Wikimedia Commons // File:Unseen_Vivian_Maier_at_Fotografiska_New_York.jpg</a></div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
         </article>
 
-        <article id="ryo-fukui" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="ryo-fukui" class="border-b-[3px] border-black mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/fukui-scenery.jpg" alt="Illustration by de' negro riot dog maniplacas 33: painted portrait of a pianist in glasses at a grand piano, holding a cardboard sign in his mouth that reads WILL PLAY JAZZ FOR FOOD" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // RYO FUKUI]</div>
+                    <div class="art-name absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:34.0cqw">FUKUI</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // Global Rediscovery]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">RYO FUKUI</h2>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
-                <img src="volumes/issue-01/media/fukui-scenery.jpg" alt="Ryo Fukui" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
-                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // RYO FUKUI]</div>
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-6">
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     A self-taught Japanese jazz pianist who did not start playing the instrument until age 22. Operating outside established American or Tokyo jazz hierarchies, he developed his own rhythmic, modal technique in Sapporo. Organic global rediscovery decades later elevated his private press albums into cult classics.
                 </p>
                 <div class="grid grid-cols-2 gap-4 pt-4 border-t-[3px] border-black text-[11px]">
@@ -313,42 +357,53 @@
                         <span>Scenery (1976) // Mellow Dream (1977)</span>
                     </div>
                 </div>
-            </div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Reference: <a class="underline hover:text-patina-accent" href="https://commons.wikimedia.org/wiki/File:Ryo_Fukui.png" target="_blank" rel="noopener">Wikimedia Commons // File:Ryo_Fukui.png</a></div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
         </article>
 
-        <article id="carmen-herrera" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="carmen-herrera" class="border-b-[3px] border-black mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/herrera-geom.jpg" alt="Carmen Herrera" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // CARMEN HERRERA]</div>
+                    <div class="art-name absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:25.1cqw">HERRERA</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Uncompromising Geometry]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CARMEN HERRERA</h2>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
-                <img src="volumes/issue-01/media/herrera-geom.jpg" alt="Carmen Herrera" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
-                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // CARMEN HERRERA]</div>
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-4">Cuban-American abstract painter Carmen Herrera sold her first major painting at 89 years old and received widespread international recognition in her 90s, maintaining rigid geometric abstraction on her own terms regardless of commercial trends.</p>
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">Cuban-American abstract painter Carmen Herrera sold her first major painting at 89 years old and received widespread international recognition in her 90s, maintaining rigid geometric abstraction on her own terms regardless of commercial trends.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Geometric Abstraction</span>
                     <span>First Major Sale: 89 Years Old</span>
                 </div>
-            </div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
         </article>
 
-        <article id="elizabeth-cotten" class="flex flex-col min-h-screen bg-umber-base">
-            <header class="border-b-[3px] border-black p-6 bg-umber-surface">
+        <article id="elizabeth-cotten" class="mag flex flex-col bg-umber-base">
+            <div class="art-panel w-full min-h-[100svh] bg-black border-b-[3px] border-black flex items-center justify-center">
+                <div class="art-frame relative" style="width:min(100%,56.25svh);aspect-ratio:9/16">
+                    <img src="volumes/issue-01/media/cotten-guitar.jpg" alt="Elizabeth Cotten" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.parentElement.classList.add('pending')">
+                    <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // ELIZABETH COTTEN]</div>
+                    <div class="art-name absolute inset-x-0 top-[7%] text-center pointer-events-none z-30" aria-hidden="true" style="font-size:29.3cqw">COTTEN</div>
+                </div>
+            </div>
+            <header class="mag-head border-b-[3px] border-black px-6 lg:px-16 py-8 bg-umber-surface">
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // 'Cotten Picking']</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">ELIZABETH COTTEN</h2>
             </header>
-            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
-                <img src="volumes/issue-01/media/cotten-guitar.jpg" alt="Elizabeth Cotten" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
-                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // ELIZABETH COTTEN]</div>
-            </div>
-            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
-                <p class="text-sm lg:text-base leading-relaxed mb-6">
+            <div class="split-text mag-text px-6 lg:px-16 py-12 bg-umber-base font-mono text-xs leading-relaxed">
+                <div class="mag-measure max-w-2xl mx-auto w-full">
+
+                <p class="font-serif text-lg lg:text-xl leading-relaxed mb-5 text-text-ivory/90">
                     After teaching herself to play an upside-down, left-handed guitar as a child, Cotten set music aside for over 40 years while working as a housekeeper. In her 60s, her employers happened to overhear her playing, leading to her recording debut at 63 and a Grammy Award at age 90.
                 </p>
                 <div class="grid grid-cols-2 gap-4 pt-4 border-t-[3px] border-black text-[11px]">
@@ -361,7 +416,8 @@
                         <span>Grammy Award at 90</span>
                     </div>
                 </div>
-            </div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-text-ivory/50 mt-6">Art: de&rsquo; negro riot dog maniplacas 33</div>
+                </div>
             </div>
         </article>
         <!-- PRINT ONLY: colophon / back page. Hidden on screen (inline display:none); print.css shows it. -->
@@ -371,13 +427,18 @@
                 <h2 class="text-4xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CONTINUUM</h2>
             </div>
             <div class="font-mono text-xs uppercase tracking-wider leading-relaxed text-text-ivory/80 border-t-[3px] border-black pt-4">
-                <p class="mb-3 text-rust-orange">[Credits &amp; Rights // complete before printing]</p>
-                <p class="mb-2">01 // Thornton Dial: [image credit / rights holder]</p>
-                <p class="mb-2">02 // Charles Bradley: "No Time For Dreaming" streamed via Free Music Archive (KEXP at SXSW 2011); image credit [rights holder]</p>
-                <p class="mb-2">03 // Vivian Maier: [image credit / rights holder]</p>
-                <p class="mb-2">04 // Ryo Fukui: [image / audio credit / rights holder]</p>
-                <p class="mb-2">05 // Carmen Herrera: [image credit / rights holder]</p>
-                <p class="mb-2">06 // Elizabeth Cotten: [image / audio credit / rights holder]</p>
+                <p class="mb-3 text-rust-orange">[Credits &amp; Rights]</p>
+                <p class="mb-2">01 // Thornton Dial: art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">02 // Charles Bradley: "No Time For Dreaming" streamed via Free Music Archive (KEXP at SXSW 2011); art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">03 // Vivian Maier: art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">04 // Ryo Fukui: art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">05 // Carmen Herrera: art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">06 // Elizabeth Cotten: art by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2 mt-4 text-rust-orange">[Authorship]</p>
+                <p class="mb-2">Cover and all article art: de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">Editor, editor&rsquo;s note and design direction: de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">Anthony Bourdain page: written by Claude (AI, Anthropic), directed and edited by de&rsquo; negro riot dog maniplacas 33</p>
+                <p class="mb-2">Licence: original text and design are CC BY 4.0. Use freely, credit &ldquo;Continuum // de&rsquo; negro riot dog maniplacas 33&rdquo;. Third-party works keep their own rights.</p>
             </div>
             <div class="flex justify-between text-[10px] uppercase text-text-ivory/50 border-t-[3px] border-black pt-4 font-mono">
                 <span>AD-FREE // INDEPENDENT</span>
@@ -386,7 +447,10 @@
         </section>
     </main>
 
-    <button id="menu-btn" type="button" class="screen-only fixed top-3 right-6 z-[60] border-[3px] border-black bg-umber-surface text-text-ivory font-mono text-[10px] uppercase tracking-widest px-3 py-2 hover:bg-patina-green transition-none">[ CONTENTS ]</button>
+    <button id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" class="screen-only fixed top-3 right-4 z-[60] w-11 h-11 flex items-center justify-center border-[3px] border-black bg-umber-surface/90 text-text-ivory hover:bg-patina-green transition-none">
+        <svg class="ic-open" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 5h18M2 11h18M2 17h18" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+        <svg class="ic-close hidden" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+    </button>
     <div id="drawer-backdrop" class="screen-only fixed inset-0 z-[65] bg-black/60" style="display:none"></div>
     <script>
         (function () {
@@ -395,7 +459,9 @@
             function set(open) {
                 d.classList.toggle('-translate-x-full', !open);
                 bd.style.display = open ? 'block' : 'none';
-                b.textContent = open ? '[ CLOSE ]' : '[ CONTENTS ]';
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.querySelector('.ic-open').classList.toggle('hidden', open);
+                b.querySelector('.ic-close').classList.toggle('hidden', !open);
             }
             b.addEventListener('click', function () { set(d.classList.contains('-translate-x-full')); });
             bd.addEventListener('click', function () { set(false); });

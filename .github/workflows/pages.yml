@@ -22,8 +22,9 @@ jobs:
       - name: Stage site files
         run: |
           mkdir _site
-          cp index.html print.css _site/
+          cp index.html print.css robots.txt sitemap.xml _site/
           [ -d volumes ] && cp -r volumes _site/volumes || true
+          [ -d fonts ] && cp -r fonts _site/fonts || true
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

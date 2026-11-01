@@ -40,9 +40,9 @@ main > article p { font-size: calc(13px * var(--s)) !important; line-height: 1.6
 
 /* Audio block: no controls on paper, static spectrum-bar motif instead */
 #audio-element, #waveform-canvas, #audio-overlay, #engine-boot-btn, #engine-status { display: none !important; }
-#charles-bradley div.h-80 { flex: none !important;
+#charles-bradley .audio-block {
   background-image: linear-gradient(180deg, #161311 0%, transparent 35%, transparent 65%, #161311 100%), repeating-linear-gradient(90deg, #2E5A50 0 3px, #161311 3px 8px) !important; }
-#charles-bradley div.h-80 > div.z-30 { justify-content: flex-start !important; padding-left: var(--safe) !important; font-size: calc(12px * var(--s)) !important; }
+#charles-bradley .audio-block > div.z-30 { justify-content: flex-start !important; padding-left: var(--safe) !important; font-size: calc(12px * var(--s)) !important; }
 
 /* Print-only colophon / back page (hidden on screen via inline style in index.html) */
 main > section.print-page { justify-content: space-between !important; padding: var(--safe) !important; background: #161311 !important; }
@@ -66,15 +66,19 @@ main > section.print-page p { font-size: calc(12px * var(--s)) !important; }
 #editors-note > header { padding-bottom: 0.9rem !important; }
 #editors-note > div.p-6 > div { padding: 0.8rem 1rem !important; }
 
-/* Split layout (art left, text right) shared by every creator article */
-main > article > div.split-body { flex-direction: row !important; flex: 1 1 auto !important; min-height: 0 !important; border-bottom: 0 !important; }
-.art-panel { width: 44% !important; flex: none !important; min-height: 0 !important; border-right: 3px solid #000 !important; border-bottom: 0 !important; }
-.art-panel img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
-.split-text { width: auto !important; flex: 1 1 0 !important; padding: 0.4in var(--safe) 0.4in 0.4in !important; }
-.split-body p { font-size: calc(13.5px * var(--s)) !important; line-height: 1.6 !important; }
+/* Creator pages: title bar on top, 9:16 art left, text right (screen order is art, title, text) */
+main > article.mag { display: grid !important; grid-template-columns: 44% 1fr; grid-template-rows: auto 1fr; grid-template-areas: "head head" "art text"; }
+main > article.mag.mag-foot { grid-template-rows: auto 1fr auto; grid-template-areas: "head head" "art text" "foot foot"; }
+main > article.mag > header { grid-area: head; }
+main > article.mag > .art-panel { grid-area: art; width: auto !important; height: auto !important; min-height: 0 !important; border-right: 3px solid #000 !important; border-bottom: 0 !important; display: flex !important; align-items: center; justify-content: center; overflow: hidden; }
+main > article.mag .art-frame { width: 100% !important; height: auto !important; aspect-ratio: 9 / 16; }
+main > article.mag .art-frame img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+main > article.mag > .split-text { grid-area: text; min-height: 0; overflow: hidden; display: flex !important; flex-direction: column; justify-content: center; padding: 0.4in var(--safe) 0.4in 0.4in !important; }
+main > article.mag > .foot { grid-area: foot; padding-left: var(--safe) !important; padding-right: var(--safe) !important; padding-bottom: calc(var(--bleed) + 0.4in) !important; }
+.mag-text .mag-measure { max-width: none !important; }
+.mag-text p { font-size: calc(13.5px * var(--s)) !important; line-height: 1.6 !important; }
 .split-text .print-only { padding: 0.25in 0.25in !important; }
-#charles-bradley div.h-80 { height: auto !important; flex: 1 1 auto !important; min-height: 4in !important; }
-#anthony-bourdain > div:last-child { padding-left: var(--safe) !important; padding-right: var(--safe) !important; padding-bottom: calc(var(--bleed) + 0.4in) !important; }
+#editors-note div.columns-body { column-count: 1 !important; columns: auto !important; }
 #now-playing { display: none !important; }
 
 /* Contents drawer is a slide-out on screen; on paper it is the contents page */
