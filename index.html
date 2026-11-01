@@ -48,6 +48,7 @@
             background: #C85A32;
             color: #F4F1EA;
         }
+        @media screen { main{scroll-snap-type:y proximity} main>article{scroll-snap-align:start} }
         .art-panel .pending-label{display:none}
         .art-panel.pending .pending-label{display:flex}
     </style>
@@ -55,7 +56,7 @@
 </head>
 <body class="bg-umber-base text-text-ivory font-mono h-screen w-screen overflow-hidden flex m-0 p-0 border-[3px] border-black">
 
-    <aside class="w-[35vw] h-screen border-r-[3px] border-black flex flex-col fixed left-0 top-0 bg-umber-surface z-50">
+    <aside id="contents-drawer" class="w-[min(90vw,28rem)] h-screen border-r-[3px] border-black flex flex-col fixed left-0 top-0 bg-umber-surface z-[70] -translate-x-full transition-transform duration-200">
         <header class="border-b-[3px] border-black p-6 bg-umber-base">
             <h1 class="text-5xl lg:text-7xl font-serif font-black tracking-tighter uppercase leading-none text-text-ivory">
                 CONTINUUM
@@ -71,6 +72,14 @@
         </section>
 
         <nav class="flex-grow overflow-y-auto font-mono text-xs uppercase divide-y-[3px] divide-black flex flex-col bg-umber-base">
+            <a href="#editors-note" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>// Editor&rsquo;s Note</span>
+                <span class="text-[10px] text-rust-orange">[Editorial]</span>
+            </a>
+            <a href="#anthony-bourdain" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
+                <span>// Anthony Bourdain</span>
+                <span class="text-[10px] text-rust-orange">[Archive]</span>
+            </a>
             <a href="#thornton-dial" class="flex items-center justify-between px-4 py-3 hover:bg-patina-green hover:text-text-ivory transition-none">
                 <span>01 // Thornton Dial</span>
                 <span class="text-[10px] text-rust-orange">[Visual]</span>
@@ -103,7 +112,7 @@
         </footer>
     </aside>
 
-    <main class="w-[65vw] h-screen overflow-y-auto ml-[35vw] flex flex-col bg-umber-base scroll-smooth pb-44">
+    <main class="w-screen h-screen overflow-y-auto flex flex-col bg-umber-base scroll-smooth">
         <article id="cover" class="border-b-[3px] border-black flex items-center justify-center h-screen min-h-screen bg-black">
             <img src="volumes/issue-01/media/cover.jpg" alt="Continuum 1 cover: a painted figure with a bandaged head holds an ear and a cardboard sign reading WILL PAINT FOR FOOD" class="h-full w-full object-contain">
         </article>
@@ -377,25 +386,44 @@
         </section>
     </main>
 
+    <button id="menu-btn" type="button" class="screen-only fixed top-3 right-6 z-[60] border-[3px] border-black bg-umber-surface text-text-ivory font-mono text-[10px] uppercase tracking-widest px-3 py-2 hover:bg-patina-green transition-none">[ CONTENTS ]</button>
+    <div id="drawer-backdrop" class="screen-only fixed inset-0 z-[65] bg-black/60" style="display:none"></div>
+    <script>
+        (function () {
+            var d = document.getElementById('contents-drawer'), b = document.getElementById('menu-btn'), bd = document.getElementById('drawer-backdrop');
+            if (!d || !b || !bd) return;
+            function set(open) {
+                d.classList.toggle('-translate-x-full', !open);
+                bd.style.display = open ? 'block' : 'none';
+                b.textContent = open ? '[ CLOSE ]' : '[ CONTENTS ]';
+            }
+            b.addEventListener('click', function () { set(d.classList.contains('-translate-x-full')); });
+            bd.addEventListener('click', function () { set(false); });
+            d.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) set(false); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+        })();
+    </script>
     <!-- Persistent player: lives outside <main>, so audio keeps playing while you scroll through the articles. -->
-    <div id="now-playing" class="screen-only fixed bottom-0 right-0 left-[35vw] z-40 border-t-[3px] border-black bg-umber-surface font-mono text-[10px] uppercase tracking-widest">
+    <div id="now-playing" class="screen-only fixed bottom-4 right-4 w-[min(92vw,380px)] z-40 border-[3px] border-black bg-umber-surface font-mono text-[10px] uppercase tracking-widest">
         <div class="flex justify-between items-center px-4 py-2 text-rust-orange">
-            <span>[Now playing // Charles Bradley // keeps playing while you read]</span>
+            <span>[Now playing // Charles Bradley]</span>
             <button id="np-toggle" type="button" class="border-[3px] border-black px-2 py-1 text-text-ivory hover:bg-patina-green transition-none">[ HIDE ]</button>
         </div>
         <div id="np-body">
-            <iframe src="https://archive.org/embed/charlesbradley2012-06-02" title="Charles Bradley live, Internet Archive player" width="100%" height="140" frameborder="0" allow="autoplay" loading="lazy"></iframe>
+            <iframe src="https://archive.org/embed/charlesbradley2012-06-02" title="Charles Bradley live, Internet Archive player" width="100%" height="64" frameborder="0" allow="autoplay" loading="lazy"></iframe>
         </div>
     </div>
     <script>
         (function () {
             var b = document.getElementById('np-toggle'), body = document.getElementById('np-body');
             if (!b || !body) return;
-            b.addEventListener('click', function () {
-                var hidden = body.style.display === 'none';
-                body.style.display = hidden ? '' : 'none';
-                b.textContent = hidden ? '[ HIDE ]' : '[ SHOW ]';
-            });
+            function set(show) {
+                body.style.maxHeight = show ? '' : '0px';
+                body.style.overflow = show ? '' : 'hidden';
+                b.textContent = show ? '[ HIDE ]' : '[ SHOW ]';
+            }
+            b.addEventListener('click', function () { set(body.style.maxHeight === '0px'); });
+            if (window.innerWidth < 768) set(false);
         })();
     </script>
 

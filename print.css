@@ -76,3 +76,6 @@ main > article > div.split-body { flex-direction: row !important; flex: 1 1 auto
 #charles-bradley div.h-80 { height: auto !important; flex: 1 1 auto !important; min-height: 4in !important; }
 #anthony-bourdain > div:last-child { padding-left: var(--safe) !important; padding-right: var(--safe) !important; padding-bottom: calc(var(--bleed) + 0.4in) !important; }
 #now-playing { display: none !important; }
+
+/* Contents drawer is a slide-out on screen; on paper it is the contents page */
+aside { transform: none !important; transition: none !important; z-index: auto !important; }
