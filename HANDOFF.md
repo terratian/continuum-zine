@@ -13,6 +13,7 @@ Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print
   - Size: `TRIM_W=5.5 TRIM_H=8.5 BLEED=0.125 npm run pdf` (inches; page = trim + 2x bleed). Default 10.75x14.375 (Domebook 2 / Whole Earth catalog trim). Type scales with page width via `--s`. Nearest stock option seen: Newspaper Club tabloid, 289x380 mm (~11.38x14.96 in); confirm the printer accepts a custom trim, bleed and page counts before ordering.
   - `STRICT=1` fails the build if any image is missing or still a placeholder.
 - `.github/workflows/print-pdf.yml`: builds the PDF on push; download it from the Actions run (Artifacts). Pages deploy is unchanged and the PDF is never published.
+- `.github/workflows/pages.yml`: deploys index.html, print.css and volumes/ to GitHub Pages on every push to main (repo Settings > Pages > Source must be "GitHub Actions"). Site URL: https://terratian.github.io/continuum-zine/
 - Adding an article adds a page; keep the total a multiple of 4 (use the colophon/extra pages to pad).
 - Output is RGB. Check the chosen printer's spec (Lulu, Mixam, KDP, IngramSpark) for trim sizes, page minimums, bleed and color handling, and order one proof (umber and `#00FF66` shift in CMYK).
 
