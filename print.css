@@ -7,8 +7,11 @@
 * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 
 /* Undo the fixed 35/65 screen shell */
-html, body { height: auto !important; width: auto !important; overflow: visible !important; display: block !important; border: 0 !important; margin: 0 !important; padding: 0 !important; background: #161311 !important; }
-main { margin: 0 !important; width: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
+html, body { height: auto !important; width: auto !important; overflow: visible !important; border: 0 !important; margin: 0 !important; padding: 0 !important; background: #161311 !important; }
+main { margin: 0 !important; width: auto !important; height: auto !important; overflow: visible !important; display: contents !important; }
+body { display: flex !important; flex-direction: column !important; } /* main is display:contents so the cover can be ordered before the contents page */
+#cover { order: -1; padding: 0 !important; background: #000 !important; }
+#cover img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
 
 /* Small kicker/label text (Tailwind text-[10px]/[11px] utilities) */
 [class*="text-[10px]"], [class*="text-[11px]"] { font-size: calc(11px * var(--s)) !important; }
