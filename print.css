@@ -40,7 +40,7 @@ main > article p { font-size: calc(13px * var(--s)) !important; line-height: 1.6
 
 /* Audio block: no controls on paper, static spectrum-bar motif instead */
 #audio-element, #waveform-canvas, #audio-overlay, #engine-boot-btn, #engine-status { display: none !important; }
-#charles-bradley div.h-80 { height: 4in !important; flex: none !important;
+#charles-bradley div.h-80 { flex: none !important;
   background-image: linear-gradient(180deg, #161311 0%, transparent 35%, transparent 65%, #161311 100%), repeating-linear-gradient(90deg, #2E5A50 0 3px, #161311 3px 8px) !important; }
 #charles-bradley div.h-80 > div.z-30 { justify-content: flex-start !important; padding-left: var(--safe) !important; font-size: calc(12px * var(--s)) !important; }
 
@@ -66,10 +66,13 @@ main > section.print-page p { font-size: calc(12px * var(--s)) !important; }
 #editors-note > header { padding-bottom: 0.9rem !important; }
 #editors-note > div.p-6 > div { padding: 0.8rem 1rem !important; }
 
-/* Bourdain page: painting left, text right */
-#anthony-bourdain > div:nth-of-type(1) { flex-direction: row !important; flex: 1 1 auto !important; min-height: 0 !important; border-bottom: 0 !important; }
-#anthony-bourdain .bourdain-art { width: 44% !important; flex: none !important; border-right: 3px solid #000 !important; border-bottom: 0 !important; }
-#anthony-bourdain .bourdain-art img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
-#anthony-bourdain > div:nth-of-type(1) > div.p-6 { width: auto !important; flex: 1 1 0 !important; padding: 0.4in var(--safe) 0.4in 0.4in !important; }
-#anthony-bourdain p { font-size: calc(13.5px * var(--s)) !important; line-height: 1.6 !important; }
+/* Split layout (art left, text right) shared by every creator article */
+main > article > div.split-body { flex-direction: row !important; flex: 1 1 auto !important; min-height: 0 !important; border-bottom: 0 !important; }
+.art-panel { width: 44% !important; flex: none !important; min-height: 0 !important; border-right: 3px solid #000 !important; border-bottom: 0 !important; }
+.art-panel img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+.split-text { width: auto !important; flex: 1 1 0 !important; padding: 0.4in var(--safe) 0.4in 0.4in !important; }
+.split-body p { font-size: calc(13.5px * var(--s)) !important; line-height: 1.6 !important; }
+.split-text .print-only { padding: 0.25in 0.25in !important; }
+#charles-bradley div.h-80 { height: auto !important; flex: 1 1 auto !important; min-height: 4in !important; }
 #anthony-bourdain > div:last-child { padding-left: var(--safe) !important; padding-right: var(--safe) !important; padding-bottom: calc(var(--bleed) + 0.4in) !important; }
+#now-playing { display: none !important; }

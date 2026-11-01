@@ -48,6 +48,8 @@
             background: #C85A32;
             color: #F4F1EA;
         }
+        .art-panel .pending-label{display:none}
+        .art-panel.pending .pending-label{display:flex}
     </style>
     <link rel="stylesheet" href="print.css" media="print">
 </head>
@@ -101,7 +103,7 @@
         </footer>
     </aside>
 
-    <main class="w-[65vw] h-screen overflow-y-auto ml-[35vw] flex flex-col bg-umber-base scroll-smooth">
+    <main class="w-[65vw] h-screen overflow-y-auto ml-[35vw] flex flex-col bg-umber-base scroll-smooth pb-44">
         <article id="cover" class="border-b-[3px] border-black flex items-center justify-center h-screen min-h-screen bg-black">
             <img src="volumes/issue-01/media/cover.jpg" alt="Continuum 1 cover: a painted figure with a bandaged head holds an ear and a cardboard sign reading WILL PAINT FOR FOOD" class="h-full w-full object-contain">
         </article>
@@ -158,11 +160,11 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Creator Focus // Pre-Celebrity Archive]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">ANTHONY BOURDAIN</h2>
             </header>
-            <div class="flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
-            <div class="bourdain-art lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black flex items-center justify-center">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black flex items-center justify-center">
                 <img src="volumes/issue-01/media/bourdain.jpg" alt="Painted portrait of Anthony Bourdain in a leather jacket and spiked collar at a punk club, holding a raw steak and a cardboard sign reading WILL COOK FOR FOOD" class="w-full h-full object-contain">
             </div>
-            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
                 <h3 class="text-[10px] font-mono uppercase text-rust-orange tracking-widest mb-3 mt-2">1985 // 1990 // 1995</h3>
                 <p class="text-sm lg:text-base leading-relaxed mb-5">
                     1985: he pays for a seat in Gordon Lish&rsquo;s writing workshop. 1990: a small advance from Random House, after meeting an editor. 1995: <em>BONE IN THE THROAT</em>, a culinary mystery, finally hits the shelves under Villard Books. Five years from handshake to hardcover, and the kitchens never closed.
@@ -194,15 +196,18 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Late Recognition]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">THORNTON DIAL</h2>
             </header>
-            <div class="w-full flex-grow border-b-[3px] border-black relative min-h-[45vh] bg-black">
-                <img src="volumes/issue-01/media/dial-assemblage.jpg" alt="Thornton Dial" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75" onerror="this.src='https://images.unsplash.com/photo-1618172193763-c511deb635bf?auto=format&fit=crop&q=80&w=2000'">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
+                <img src="volumes/issue-01/media/dial-assemblage.jpg" alt="Thornton Dial" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
+                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // THORNTON DIAL]</div>
             </div>
-            <div class="p-6 bg-umber-surface border-b-[3px] border-black font-mono text-xs leading-relaxed">
-                <p class="mb-3">A self-taught assemblage artist and former industrial metalworker from Alabama, Dial spent decades quietly constructing intricate sculptures and monumental wall assemblages out of discarded industrial flotsam, farm tools, and scavenged metal. Without academic validation or art-market ties, his work remained largely confined to local yard shows until he was noticed in his late 50s.</p>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+                <p class="text-sm lg:text-base leading-relaxed mb-4">A self-taught assemblage artist and former industrial metalworker from Alabama, Dial spent decades quietly constructing intricate sculptures and monumental wall assemblages out of discarded industrial flotsam, farm tools, and scavenged metal. Without academic validation or art-market ties, his work remained largely confined to local yard shows until he was noticed in his late 50s.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Found Object Assemblage</span>
                     <span>Breakthrough: Age 58</span>
                 </div>
+            </div>
             </div>
         </article>
 
@@ -212,7 +217,9 @@
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CHARLES BRADLEY</h2>
             </header>
             
-            <div class="w-full h-80 border-b-[3px] border-black relative bg-umber-base overflow-hidden flex flex-col justify-end">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex flex-col">
+            <div class="w-full h-80 lg:h-auto lg:flex-grow border-b-[3px] lg:border-b-0 border-black relative bg-umber-base overflow-hidden flex flex-col justify-end">
                 <audio id="audio-element" crossorigin="anonymous" src="volumes/issue-01/media/bradley-session.ogg" loop preload="auto"></audio>
                 <canvas id="waveform-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
                 <div class="absolute inset-0 z-20 flex items-center justify-center bg-umber-base/85" id="audio-overlay">
@@ -225,14 +232,22 @@
                     <span>No Time For Dreaming (2011)</span>
                 </div>
             </div>
-
-            <div class="screen-only border-b-[3px] border-black bg-umber-surface p-4 font-mono text-xs uppercase tracking-widest flex flex-col gap-3" id="bradley-stream">
+            </div>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+                <p class="text-sm lg:text-base leading-relaxed mb-4">
+                    Bradley endured decades of homelessness, illness, and blue-collar labor while singing in small clubs under the alias "Black Velvet". Without industry representation or backing, he did not release his debut studio album until he was 62 years old.
+                </p>
+                <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
+                    <span>Medium: Deep Soul / R&B</span>
+                    <span>Breakthrough: Age 62</span>
+                </div>
+            <div class="screen-only mt-6 border-[3px] border-black bg-umber-surface p-4 font-mono text-xs uppercase tracking-widest flex flex-col gap-3" id="bradley-stream">
                 <span class="text-rust-orange text-[10px]">[Stream // Free Music Archive]</span>
                 <!-- EMBED SLOT: paste FMA's own player embed code here (track page > Share/Embed). Nothing is hosted in this repo. -->
                 <a href="https://freemusicarchive.org/music/Charles_Bradley/KEXP_at_SXSW_2011/No_Time_For_Dreaming/" target="_blank" rel="noopener" class="border-[3px] border-black bg-patina-green text-text-ivory px-4 py-3 font-black text-center hover:bg-patina-accent hover:text-black transition-none">&#9654; Listen: No Time For Dreaming // Charles Bradley</a>
                 <span class="text-text-ivory/50 text-[10px] leading-relaxed">Credit: Charles Bradley // KEXP at SXSW 2011 // FMA-Limited: Download Only License // Streamed from freemusicarchive.org, not hosted here</span>
             </div>
-            <div class="print-only border-b-[3px] border-black bg-umber-surface font-mono uppercase tracking-widest" style="display:none">
+            <div class="print-only mt-6 border-[3px] border-black bg-umber-surface font-mono uppercase tracking-widest" style="display:none">
                 <svg class="qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" shape-rendering="crispEdges"><path fill="#F4F1EA" d="M0 0h45v45H0z"/><path stroke="#161311" d="M2 2.5h7m6 0h2m1 0h4m3 0h1m1 0h1m2 0h2m1 0h1m2 0h7M2 3.5h1m5 0h1m1 0h3m2 0h1m1 0h2m1 0h1m1 0h3m5 0h2m2 0h1m1 0h1m5 0h1M2 4.5h1m1 0h3m1 0h1m1 0h1m4 0h1m5 0h2m2 0h1m2 0h2m3 0h1m2 0h1m1 0h3m1 0h1M2 5.5h1m1 0h3m1 0h1m1 0h1m2 0h1m3 0h1m2 0h3m2 0h2m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1M2 6.5h1m1 0h3m1 0h1m3 0h2m4 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M2 7.5h1m5 0h1m3 0h2m2 0h1m5 0h2m2 0h1m1 0h1m2 0h1m2 0h1m1 0h1m5 0h1M2 8.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M10 9.5h3m2 0h3m7 0h2m1 0h1m1 0h1m1 0h3M2 10.5h1m5 0h1m1 0h3m1 0h3m1 0h4m2 0h1m2 0h2m1 0h2m1 0h1m1 0h2m2 0h3M2 11.5h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h2m1 0h5m2 0h2m3 0h1m3 0h1m1 0h4m3 0h1M3 12.5h2m1 0h3m3 0h1m1 0h1m1 0h1m1 0h2m3 0h1m4 0h5m1 0h2m2 0h1M4 13.5h1m4 0h1m4 0h1m2 0h2m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h3m1 0h2M2 14.5h1m3 0h4m1 0h2m1 0h1m3 0h2m1 0h2m2 0h1m4 0h1m3 0h1m1 0h1M2 15.5h3m8 0h4m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h3m1 0h4m1 0h1M3 16.5h2m3 0h2m1 0h2m1 0h2m3 0h1m1 0h1m1 0h2m6 0h1m3 0h1m1 0h4M2 17.5h1m2 0h2m3 0h5m3 0h1m1 0h2m2 0h1m1 0h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h1M2 18.5h1m4 0h2m6 0h1m2 0h2m1 0h2m1 0h1m2 0h1m2 0h1m2 0h3m1 0h1m2 0h3M2 19.5h1m6 0h3m4 0h1m2 0h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h5m3 0h1M2 20.5h1m1 0h2m2 0h2m2 0h2m7 0h1m1 0h3m3 0h2m2 0h8m1 0h1M2 21.5h3m4 0h2m1 0h1m1 0h1m2 0h4m1 0h1m1 0h2m1 0h1m7 0h2m1 0h2m2 0h1M2 22.5h2m4 0h3m2 0h2m1 0h1m5 0h2m1 0h1m2 0h2m2 0h2m5 0h1m1 0h1M5 23.5h2m2 0h4m1 0h4m1 0h3m3 0h1m2 0h2m2 0h3m2 0h4M3 24.5h1m2 0h3m1 0h4m3 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h2m1 0h1m1 0h3M2 25.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h2m2 0h2m1 0h5m2 0h1M2 26.5h3m1 0h1m1 0h1m3 0h2m1 0h2m1 0h1m2 0h1m3 0h2m2 0h2m2 0h2m1 0h1m4 0h1M2 27.5h1m2 0h1m1 0h1m2 0h1m5 0h1m1 0h5m2 0h1m3 0h5m1 0h1m1 0h3m1 0h1M2 28.5h2m4 0h2m1 0h1m1 0h1m2 0h2m1 0h2m1 0h3m2 0h1m1 0h2m1 0h1m1 0h1m1 0h3M5 29.5h1m1 0h1m2 0h1m2 0h4m5 0h1m1 0h3m5 0h2m1 0h2m1 0h3M5 30.5h2m1 0h1m1 0h4m1 0h3m3 0h2m1 0h1m1 0h1m1 0h4m1 0h1m3 0h1m1 0h3M2 31.5h1m3 0h1m2 0h2m1 0h1m2 0h2m2 0h2m2 0h1m3 0h2m2 0h4m1 0h6M2 32.5h3m1 0h1m1 0h3m4 0h2m1 0h1m2 0h1m1 0h2m1 0h1m2 0h1m3 0h1m1 0h1m2 0h1m3 0h1M2 33.5h1m3 0h1m3 0h5m1 0h3m5 0h2m2 0h1m7 0h2m1 0h1m1 0h1M2 34.5h1m3 0h8m1 0h3m1 0h1m4 0h3m1 0h11m1 0h1M10 35.5h5m6 0h1m1 0h3m2 0h4m1 0h2m3 0h2m1 0h1M2 36.5h7m2 0h2m1 0h4m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h3M2 37.5h1m5 0h1m3 0h1m1 0h1m1 0h3m3 0h2m1 0h1m2 0h2m1 0h4m3 0h2m1 0h2M2 38.5h1m1 0h3m1 0h1m2 0h2m2 0h3m1 0h2m1 0h2m2 0h4m1 0h1m1 0h7M2 39.5h1m1 0h3m1 0h1m3 0h1m2 0h1m1 0h3m1 0h3m3 0h4m1 0h3m2 0h1m3 0h1M2 40.5h1m1 0h3m1 0h1m2 0h2m2 0h1m3 0h2m2 0h1m5 0h2m4 0h4m1 0h1M2 41.5h1m5 0h1m4 0h2m2 0h1m1 0h2m3 0h2m4 0h1m7 0h3m1 0h1M2 42.5h7m1 0h4m2 0h6m2 0h6m1 0h1m1 0h1m3 0h2m1 0h1"/></svg>
 
                 <div class="qr-text">
@@ -241,15 +256,7 @@
                     <span class="text-text-ivory/60 text-[10px]">Charles Bradley // KEXP at SXSW 2011 // freemusicarchive.org</span>
                 </div>
             </div>
-
-            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
-                <p class="text-sm lg:text-base leading-relaxed mb-4">
-                    Bradley endured decades of homelessness, illness, and blue-collar labor while singing in small clubs under the alias "Black Velvet". Without industry representation or backing, he did not release his debut studio album until he was 62 years old.
-                </p>
-                <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
-                    <span>Medium: Deep Soul / R&B</span>
-                    <span>Breakthrough: Age 62</span>
-                </div>
+            </div>
             </div>
         </article>
 
@@ -258,15 +265,18 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Posthumous Archive]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">VIVIAN MAIER</h2>
             </header>
-            <div class="w-full flex-grow border-b-[3px] border-black relative min-h-[45vh] bg-black">
-                <img src="volumes/issue-01/media/maier-roll.jpg" alt="Vivian Maier" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75" onerror="this.src='https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=2000'">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
+                <img src="volumes/issue-01/media/maier-roll.jpg" alt="Vivian Maier" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
+                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // VIVIAN MAIER]</div>
             </div>
-            <div class="p-6 bg-umber-surface border-b-[3px] border-black font-mono text-xs leading-relaxed">
-                <p class="mb-3">Working as a private nanny for roughly four decades, Maier took over 150,000 photographs on her Rolleiflex twin-lens camera without showing them to anyone. Her massive archive was discovered accidentally in delinquent storage lockers near the end of her life.</p>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+                <p class="text-sm lg:text-base leading-relaxed mb-4">Working as a private nanny for roughly four decades, Maier took over 150,000 photographs on her Rolleiflex twin-lens camera without showing them to anyone. Her massive archive was discovered accidentally in delinquent storage lockers near the end of her life.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Street Photography</span>
                     <span>Discovery: Posthumous</span>
                 </div>
+            </div>
             </div>
         </article>
 
@@ -275,7 +285,12 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // Global Rediscovery]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">RYO FUKUI</h2>
             </header>
-            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
+                <img src="volumes/issue-01/media/fukui-scenery.jpg" alt="Ryo Fukui" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
+                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // RYO FUKUI]</div>
+            </div>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
                 <p class="text-sm lg:text-base leading-relaxed mb-6">
                     A self-taught Japanese jazz pianist who did not start playing the instrument until age 22. Operating outside established American or Tokyo jazz hierarchies, he developed his own rhythmic, modal technique in Sapporo. Organic global rediscovery decades later elevated his private press albums into cult classics.
                 </p>
@@ -290,6 +305,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </article>
 
         <article id="carmen-herrera" class="border-b-[3px] border-black flex flex-col min-h-screen bg-umber-base">
@@ -297,15 +313,18 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Visual Creator Focus // Uncompromising Geometry]</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CARMEN HERRERA</h2>
             </header>
-            <div class="w-full flex-grow border-b-[3px] border-black relative min-h-[45vh] bg-black">
-                <img src="volumes/issue-01/media/herrera-geom.jpg" alt="Carmen Herrera" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-75" onerror="this.src='https://images.unsplash.com/photo-1618172193763-c511deb635bf?auto=format&fit=crop&q=80&w=2000'">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
+                <img src="volumes/issue-01/media/herrera-geom.jpg" alt="Carmen Herrera" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
+                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // CARMEN HERRERA]</div>
             </div>
-            <div class="p-6 bg-umber-surface border-b-[3px] border-black font-mono text-xs leading-relaxed">
-                <p class="mb-3">Cuban-American abstract painter Carmen Herrera sold her first major painting at 89 years old and received widespread international recognition in her 90s, maintaining rigid geometric abstraction on her own terms regardless of commercial trends.</p>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
+                <p class="text-sm lg:text-base leading-relaxed mb-4">Cuban-American abstract painter Carmen Herrera sold her first major painting at 89 years old and received widespread international recognition in her 90s, maintaining rigid geometric abstraction on her own terms regardless of commercial trends.</p>
                 <div class="flex justify-between text-[10px] text-rust-orange uppercase tracking-wider">
                     <span>Medium: Geometric Abstraction</span>
                     <span>First Major Sale: 89 Years Old</span>
                 </div>
+            </div>
             </div>
         </article>
 
@@ -314,7 +333,12 @@
                 <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Sound Creator Focus // 'Cotten Picking']</span>
                 <h2 class="text-4xl lg:text-6xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">ELIZABETH COTTEN</h2>
             </header>
-            <div class="p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center">
+            <div class="split-body flex flex-col lg:flex-row flex-grow border-b-[3px] border-black">
+            <div class="art-panel lg:w-2/5 bg-black border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black relative flex items-center justify-center min-h-[45vh]">
+                <img src="volumes/issue-01/media/cotten-guitar.jpg" alt="Elizabeth Cotten" class="w-full h-full object-contain" onerror="this.style.display='none';this.parentElement.classList.add('pending')">
+                <div class="pending-label absolute inset-0 items-center justify-center p-6 text-center font-mono text-[10px] uppercase tracking-widest text-rust-orange">[ARTWORK PENDING // ELIZABETH COTTEN]</div>
+            </div>
+            <div class="split-text p-6 bg-umber-base font-mono text-xs leading-relaxed flex-grow flex flex-col justify-center lg:w-3/5">
                 <p class="text-sm lg:text-base leading-relaxed mb-6">
                     After teaching herself to play an upside-down, left-handed guitar as a child, Cotten set music aside for over 40 years while working as a housekeeper. In her 60s, her employers happened to overhear her playing, leading to her recording debut at 63 and a Grammy Award at age 90.
                 </p>
@@ -328,6 +352,7 @@
                         <span>Grammy Award at 90</span>
                     </div>
                 </div>
+            </div>
             </div>
         </article>
         <!-- PRINT ONLY: colophon / back page. Hidden on screen (inline display:none); print.css shows it. -->
@@ -351,6 +376,28 @@
             </div>
         </section>
     </main>
+
+    <!-- Persistent player: lives outside <main>, so audio keeps playing while you scroll through the articles. -->
+    <div id="now-playing" class="screen-only fixed bottom-0 right-0 left-[35vw] z-40 border-t-[3px] border-black bg-umber-surface font-mono text-[10px] uppercase tracking-widest">
+        <div class="flex justify-between items-center px-4 py-2 text-rust-orange">
+            <span>[Now playing // Charles Bradley // keeps playing while you read]</span>
+            <button id="np-toggle" type="button" class="border-[3px] border-black px-2 py-1 text-text-ivory hover:bg-patina-green transition-none">[ HIDE ]</button>
+        </div>
+        <div id="np-body">
+            <iframe src="https://archive.org/embed/charlesbradley2012-06-02" title="Charles Bradley live, Internet Archive player" width="100%" height="140" frameborder="0" allow="autoplay" loading="lazy"></iframe>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var b = document.getElementById('np-toggle'), body = document.getElementById('np-body');
+            if (!b || !body) return;
+            b.addEventListener('click', function () {
+                var hidden = body.style.display === 'none';
+                body.style.display = hidden ? '' : 'none';
+                b.textContent = hidden ? '[ HIDE ]' : '[ SHOW ]';
+            });
+        })();
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
