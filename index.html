@@ -62,13 +62,14 @@
             background: #C85A32;
             color: #F4F1EA;
         }
-        /* Phone-shaped column: every story is a centered 9:16-wide strip, even on wide screens */
+        /* Landscape-phone layout: full-width stories, 9:16 art centered, centered text on a readable measure. flex-shrink:0 stops long stories being clipped. */
         @media screen {
             main { align-items: center; background: #0d0b0a; }
-            main > article { width: min(100%, max(56.25svh, 22rem)); text-align: center; border-left: 3px solid #000; border-right: 3px solid #000; }
+            main > article { width: 100%; flex-shrink: 0; text-align: center; }
             main > article > header, main > article .split-text, main > article .columns-body { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
             main > article .columns-body { column-count: 1 !important; columns: auto !important; }
-            main > article .mag-measure { max-width: none !important; }
+            main > article .mag-measure, main > article .columns-body { max-width: 46rem !important; margin-left: auto; margin-right: auto; }
+            main > article > header { padding-left: 4rem !important; padding-right: 4rem !important; }
             main > article .flex.justify-between { justify-content: center; flex-wrap: wrap; gap: .25rem 1.25rem; }
             main > article h2 { overflow-wrap: anywhere; }
             main>article#editors-note>header{padding-right:1.5rem !important}
