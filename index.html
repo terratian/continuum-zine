@@ -49,6 +49,7 @@
             color: #F4F1EA;
         }
     </style>
+    <link rel="stylesheet" href="print.css" media="print">
 </head>
 <body class="bg-umber-base text-text-ivory font-mono h-screen w-screen overflow-hidden flex m-0 p-0 border-[3px] border-black">
 
@@ -226,6 +227,26 @@
                 </div>
             </div>
         </article>
+        <!-- PRINT ONLY: colophon / back page. Hidden on screen (inline display:none); print.css shows it. -->
+        <section class="print-page bg-umber-base" style="display:none" aria-hidden="true">
+            <div>
+                <span class="text-[10px] font-mono uppercase text-rust-orange tracking-widest">[Colophon // Issue 01]</span>
+                <h2 class="text-4xl font-serif font-black uppercase tracking-tight mt-2 text-text-ivory">CONTINUUM</h2>
+            </div>
+            <div class="font-mono text-xs uppercase tracking-wider leading-relaxed text-text-ivory/80 border-t-[3px] border-black pt-4">
+                <p class="mb-3 text-rust-orange">[Credits &amp; Rights // complete before printing]</p>
+                <p class="mb-2">01 // Thornton Dial: [image credit / rights holder]</p>
+                <p class="mb-2">02 // Charles Bradley: [image + audio credit / rights holder]</p>
+                <p class="mb-2">03 // Vivian Maier: [image credit / rights holder]</p>
+                <p class="mb-2">04 // Ryo Fukui: [image / audio credit / rights holder]</p>
+                <p class="mb-2">05 // Carmen Herrera: [image credit / rights holder]</p>
+                <p class="mb-2">06 // Elizabeth Cotten: [image / audio credit / rights holder]</p>
+            </div>
+            <div class="flex justify-between text-[10px] uppercase text-text-ivory/50 border-t-[3px] border-black pt-4 font-mono">
+                <span>AD-FREE // INDEPENDENT</span>
+                <span>ISSUE 01 // PRINT ON DEMAND</span>
+            </div>
+        </section>
     </main>
 
     <script>

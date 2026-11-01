@@ -1,0 +1,28 @@
+name: Build print PDF
+# Does NOT touch GitHub Pages. The PDF is a private build artifact (Actions run page -> Artifacts),
+# never published to the public site, so unlicensed/placeholder art can't leak out.
+on:
+  push:
+    paths: [index.html, print.css, build-pdf.mjs, package.json, 'volumes/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node build-pdf.mjs
+        env:
+          TRIM_W: '8.5'
+          TRIM_H: '11'
+          BLEED: '0.125'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: continuum-issue-01-pdf
+          path: dist/*.pdf

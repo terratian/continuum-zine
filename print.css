@@ -1,0 +1,42 @@
+/* CONTINUUM — print stylesheet. Loaded with media="print", so the screen UI is untouched.
+   Page = trim + bleed. build-pdf.mjs overrides --page-w/--page-h/--bleed and @page from env. */
+@page { size: 8.75in 11.25in; margin: 0; } /* 8.5x11 trim + 0.125in bleed each side */
+:root { --page-w: 8.75in; --page-h: 11.25in; --bleed: 0.125in; --safe: calc(var(--bleed) + 0.3in); }
+
+* { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+/* Undo the fixed 35/65 screen shell */
+html, body { height: auto !important; width: auto !important; overflow: visible !important; display: block !important; border: 0 !important; margin: 0 !important; padding: 0 !important; background: #161311 !important; }
+main { margin: 0 !important; width: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
+
+/* Page 1: cover + contents (the sidebar) */
+aside { position: static !important; width: auto !important; height: calc(var(--page-h) - 1px) !important; border: 0 !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; break-after: page; }
+aside > header { padding: var(--safe) var(--safe) 1.5rem !important; }
+aside > header h1 { font-size: 6.4rem !important; }
+aside > header p { font-size: 12px !important; }
+aside > section { padding: 1.25rem var(--safe) !important; }
+aside > section p:first-child { font-size: 18px !important; }
+aside > section p:last-child { font-size: 13px !important; }
+aside > nav { overflow: hidden !important; flex: 1 1 auto !important; }
+aside > nav a { flex: 1 1 0 !important; padding: 0 var(--safe) !important; font-size: 14px !important; }
+aside > footer { padding: 1rem var(--safe) calc(var(--bleed) + 0.3in) !important; }
+
+/* One article = one page */
+main > article, main > section.print-page { height: calc(var(--page-h) - 1px) !important; min-height: 0 !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; border: 0 !important; break-after: page; break-inside: avoid; }
+main > :last-child { break-after: auto; }
+main > article > header { padding: var(--safe) var(--safe) 1.25rem !important; }
+main > article > header h2, main > section.print-page h2 { font-size: 3.4rem !important; line-height: 1 !important; }
+main > article > div.p-6 { padding-left: var(--safe) !important; padding-right: var(--safe) !important; }
+main > article > :last-child { padding-bottom: calc(var(--bleed) + 0.3in) !important; border-bottom: 0 !important; }
+main > article div[class*="min-h-"] { min-height: 0 !important; } /* image panels just fill the page (flex-grow) */
+main > article p { font-size: 13px !important; line-height: 1.65 !important; }
+
+/* Audio block: no controls on paper, static spectrum-bar motif instead */
+#audio-element, #waveform-canvas, #audio-overlay, #engine-boot-btn, #engine-status { display: none !important; }
+#charles-bradley div.h-80 { height: 3.2in !important; flex: none !important;
+  background-image: linear-gradient(180deg, #161311 0%, transparent 35%, transparent 65%, #161311 100%), repeating-linear-gradient(90deg, #2E5A50 0 3px, #161311 3px 8px) !important; }
+#charles-bradley div.h-80 > div.z-30 { justify-content: flex-start !important; padding-left: var(--safe) !important; }
+
+/* Print-only colophon / back page (hidden on screen via inline style in index.html) */
+main > section.print-page { justify-content: space-between !important; padding: var(--safe) !important; background: #161311 !important; }
+main > section.print-page p { font-size: 12px !important; }
