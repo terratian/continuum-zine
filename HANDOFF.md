@@ -32,3 +32,4 @@ Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print
 - Facts to verify: Cotten's Grammy age, Maier's photo count.
 - Tailwind CDN is prototype-only; compile Tailwind before heavy production use.
 - `resizeCanvas()` stacks `ctx.scale` on each resize (waveform).
+- Added Issue 01 text: "The Gala Dissection" (fiction) and "The Latency Blueprint" (essay), both written by Claude, directed/edited by the pen name; art slots `gala-dissection.jpg`, `latency-blueprint.jpg` are pending. Each creator page got a short "The Ledger" paragraph tying it to the editor's note. Facts in those paragraphs (Dial, Bradley, Maier, Fukui, Herrera, Cotten) are from general knowledge and still need checking. Page count is now 13 for print; pad to 16.
