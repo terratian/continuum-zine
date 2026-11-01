@@ -22,6 +22,7 @@ Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print
 - Rights: artwork, photographs and audio by/of Dial, Maier, Herrera, Bradley, Fukui, Cotten need licensing for web and print. Fill the credits lines on the colophon page.
 - Fonts: tailwind config names Playfair Display but no font is loaded, so headings render in Georgia. Add the font (web + print) if Playfair is the intent.
 - Bradley audio: the screen panel links to the Free Music Archive track page (licence shown there: FMA-Limited, Download Only). Paste FMA's own player embed code into the marked slot in `#bradley-stream`. No audio is hosted in the repo; `bradley-session.ogg` is not present.
+- Bourdain page (`#anthony-bourdain`, not in the sidebar nav): the 25,000 first-printing figure in the dedication is unverified (no source found; check the copyright page or a publisher record). The 1985 Lish workshop, 1990 Random House advance, 1995 Villard publication, self-funded tour and 2000 Kitchen Confidential facts come from Wikipedia.
 - Facts to verify: Cotten's Grammy age, Maier's photo count.
 - Tailwind CDN is prototype-only; compile Tailwind before heavy production use.
 - `resizeCanvas()` stacks `ctx.scale` on each resize (waveform).
