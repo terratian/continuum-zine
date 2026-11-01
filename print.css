@@ -44,3 +44,10 @@ main > article p { font-size: calc(13px * var(--s)) !important; line-height: 1.6
 /* Print-only colophon / back page (hidden on screen via inline style in index.html) */
 main > section.print-page { justify-content: space-between !important; padding: var(--safe) !important; background: #161311 !important; }
 main > section.print-page p { font-size: calc(12px * var(--s)) !important; }
+
+/* Stream links: on paper, the screen link becomes a QR code panel */
+.screen-only { display: none !important; }
+.print-only { display: flex !important; align-items: center; gap: 0.35in; padding: 0.25in var(--safe) !important; flex: none !important; }
+.print-only svg.qr { width: 1.7in; height: 1.7in; flex: none; border: 3px solid #000; }
+.print-only .qr-text { display: flex; flex-direction: column; gap: 0.08in; }
+.print-only .qr-text p { font-size: calc(18px * var(--s)) !important; font-weight: 900; color: #F4F1EA; margin: 0; }
