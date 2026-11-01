@@ -7,20 +7,21 @@ Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print
 - Print changes live in `print.css` (loaded with `media="print"`) and the hidden colophon `<section class="print-page">` at the end of `<main>`.
 
 ## Print pipeline
-- `print.css`: page 1 = cover/contents (sidebar), then one article per page, then colophon. 8 pages = multiple of 4 (saddle-stitch). Audio/canvas controls are hidden in print.
+- `print.css`: page 1 = cover image, page 2 = contents (sidebar), then one article per page, then colophon. Currently 9 pages; saddle-stitch needs a multiple of 4, so pad to 12 as articles grow. Audio/canvas controls are hidden in print.
 - `build-pdf.mjs`: Playwright/Chromium -> `dist/continuum-issue-01.pdf`.
   - Local: `npm install && npx playwright install chromium && npm run pdf`
   - Size: `TRIM_W=5.5 TRIM_H=8.5 BLEED=0.125 npm run pdf` (inches; page = trim + 2x bleed). Default 10.75x14.375 (Domebook 2 / Whole Earth catalog trim). Type scales with page width via `--s`. Nearest stock option seen: Newspaper Club tabloid, 289x380 mm (~11.38x14.96 in); confirm the printer accepts a custom trim, bleed and page counts before ordering.
   - `STRICT=1` fails the build if any image is missing or still a placeholder.
-- `.github/workflows/print-pdf.yml`: builds the PDF on push; download it from the Actions run (Artifacts). Pages deploy is unchanged and the PDF is never published.
+- `.github/workflows/print-pdf.yml`: builds the PDF on push; download it from the Actions run (Artifacts). The PDF is never published to the site.
 - `.github/workflows/pages.yml`: deploys index.html, print.css and volumes/ to GitHub Pages on every push to main (repo Settings > Pages > Source must be "GitHub Actions"). Site URL: https://terratian.github.io/continuum-zine/
 - Adding an article adds a page; keep the total a multiple of 4 (use the colophon/extra pages to pad).
 - Output is RGB. Check the chosen printer's spec (Lulu, Mixam, KDP, IngramSpark) for trim sizes, page minimums, bleed and color handling, and order one proof (umber and `#00FF66` shift in CMYK).
 
 ## Open items
-- Images: `volumes/issue-01/media/*` don't exist yet, so the page falls back to Unsplash stock photos. Replace with licensed/own images before publishing or printing.
+- Images: only `volumes/issue-01/media/cover.jpg` exists (768x1376 px; export larger for print). The article images are missing, so the page falls back to Unsplash stock photos. Replace with licensed/own images before publishing or printing.
 - Rights: artwork, photographs and audio by/of Dial, Maier, Herrera, Bradley, Fukui, Cotten need licensing for web and print. Fill the credits lines on the colophon page.
 - Fonts: tailwind config names Playfair Display but no font is loaded, so headings render in Georgia. Add the font (web + print) if Playfair is the intent.
+- Bradley audio: the screen panel links to the Free Music Archive track page (licence shown there: FMA-Limited, Download Only). Paste FMA's own player embed code into the marked slot in `#bradley-stream`. No audio is hosted in the repo; `bradley-session.ogg` is not present.
 - Facts to verify: Cotten's Grammy age, Maier's photo count.
 - Tailwind CDN is prototype-only; compile Tailwind before heavy production use.
 - `resizeCanvas()` stacks `ctx.scale` on each resize (waveform).
