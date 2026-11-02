@@ -3,7 +3,7 @@
 Static site (`index.html`, Tailwind CDN) published by GitHub Pages, plus a print pipeline that renders the same HTML to a print-on-demand PDF.
 
 ## Rules
-- Screen layout: landscape-first. Each story is full width, art is a centered 9:16 panel, all text centered in a 46rem measure (see the `@media screen` block in index.html). Articles are flex:none so long stories are never clipped.
+- Screen layout: phones (portrait) get the upright stack: 9:16 art, then centered text. PC landscape (>=1024px wide) gets a split spread: 9:16 art pinned left at full height while the centered text scrolls on the right. See the `@media screen` blocks in index.html. Articles are flex:none so long stories are never clipped.
 - Screen UI is the design. Don't restyle it unless asked; content goes into the existing article blocks.
 - Print changes live in `print.css` (loaded with `media="print"`) and the hidden colophon `<section class="print-page">` at the end of `<main>`.
 

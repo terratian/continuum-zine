@@ -75,6 +75,17 @@
             main>article#editors-note>header{padding-right:1.5rem !important}
             #contents-drawer.-translate-x-full { visibility: hidden; }
         }
+        /* PC landscape: 9:16 art stays pinned on the left at full screen height while the centered text scrolls beside it. Phones stay upright and stacked. */
+        @media screen and (min-width: 1024px) and (orientation: landscape) {
+            main > article.mag { display: grid !important; grid-template-columns: min(56.25svh, 42vw) 1fr; grid-template-areas: "art head" "art text" "foot foot"; grid-template-rows: auto 1fr auto; align-items: stretch; }
+            main > article.mag:not(.mag-foot) { grid-template-areas: "art head" "art text"; grid-template-rows: auto 1fr; }
+            main > article.mag > .art-panel { grid-area: art; position: sticky; top: 0; height: 100svh; min-height: 0 !important; align-self: start; border-bottom: 0; border-right: 3px solid #000; }
+            main > article.mag > .art-panel .art-frame { width: 100% !important; }
+            main > article.mag > header { grid-area: head; padding-top: 4rem; }
+            main > article.mag > .split-text { grid-area: text; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 3rem; padding-bottom: 6rem; }
+            main > article.mag > .foot { grid-area: foot; }
+            main > article.mag > header, main > article.mag > .split-text { padding-left: clamp(2rem, 6vw, 7rem) !important; padding-right: clamp(2rem, 6vw, 7rem) !important; }
+        }
         @font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/anton-latin-400.woff2") format("woff2")}
         .art-frame{container-type:inline-size}
         .art-name{font-family:Anton,Impact,"Arial Narrow","Liberation Sans Narrow",sans-serif;font-weight:400;line-height:.95;letter-spacing:.02em;text-transform:uppercase;color:#F4F1EA;text-shadow:0 2px 0 rgba(0,0,0,.55),0 0 28px rgba(0,0,0,.45)}
